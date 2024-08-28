@@ -116,14 +116,6 @@ export class Particles {
                         offset: 0,
                         size: this._spawnCounterBuffer?.size
                     }
-                },
-                {
-                    binding: 3,
-                    resource: {
-                        buffer: this._spawnCounterBuffer,
-                        offset: 0,
-                        size: this._spawnCounterBuffer?.size
-                    }
                 }
             ]
         }

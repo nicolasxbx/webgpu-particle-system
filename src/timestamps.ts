@@ -54,7 +54,7 @@ export class TimeStamps {
     }
 
     public writeTimestamp(commandEncoder: GPUCommandEncoder, queryIndex: number = 0) {
-        commandEncoder.writeTimestamp(this.querySet, queryIndex);
+        //commandEncoder.writeTimestamp(this.querySet, queryIndex);
     }
 
     public resolveQuerySet(commandEncoder : GPUCommandEncoder){

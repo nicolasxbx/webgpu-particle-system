@@ -86,7 +86,7 @@ struct SimulationParams {
 
 // spawnCounter and spawCounterNonAtomic are both bound to the same buffer to allow non-atomic access to the counter
 @binding(2) @group(0) var<storage, read_write> spawnCounter : atomic<u32>;
-@binding(3) @group(0) var<storage, read_write> spawnCounterNonAtomic : u32;
+// @binding(3) @group(0) var<storage, read_write> spawnCounterNonAtomic : u32;
 
 @binding(1) @group(0) var<uniform> params : SimulationParams;
 
@@ -105,7 +105,7 @@ fn simulate(@builtin(global_invocation_id) GlobalInvocationID : vec3<u32>) {
     if(params.useAliasedSpawnCount == 0){
         spawnLimitReached = params.useSpawnCap != 0 && atomicLoad(&spawnCounter) >= params.maxSpawnCount;
     } else {
-        spawnLimitReached = params.useSpawnCap != 0 && spawnCounterNonAtomic >= params.maxSpawnCount;
+        //spawnLimitReached = params.useSpawnCap != 0 && spawnCounterNonAtomic >= params.maxSpawnCount;
     }
 
     if (particle.lifetime <= 0 && !spawnLimitReached) {
